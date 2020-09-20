@@ -54,20 +54,25 @@ header {
 }
 
 .main-content {
+    display: flex;
+    flex-wrap: wrap;
     margin: auto;
     width: 90vw;
-    height: 90vh;
+    margin-top: 2rem;
+    height: 85vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
 
 .article-content {
-    margin: 3rem 0;
+    margin-bottom: 3rem;
     border-radius: 3.5rem;
     background-color: #383737;
     color: white;
     padding: 2rem;
     margin-right: 1rem;
+    flex-grow: 1;
+    flex-basis: 40%;
 }
 
 .section-title {
