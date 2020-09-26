@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --on-accent: #ecf0f1;
+  --accent: #009688;
+  --accent-dark: #00463f;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.main-title {
+  padding: .2rem;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  margin: .5rem;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion {
+  margin: .5rem 0;
+  background: var(--accent);
+  border-radius: 1rem;
+  color: var(--on-accent);
+  overflow-y: hidden;
+}
+
+.accordion input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+.accordion .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.content {
+  max-height: 0;
+  background: white;
+  color: var(--accent);
+  transition: max-height .35s linear;
+}
+
+.content p {
+  padding: .5rem;
+}
+
+input:checked + .title {
+    background: var(--accent-dark);
+}
+
+input:checked + .title::after {
+    transform: rotate(90deg);
+}
+
+input:checked ~ .content {
+    max-height: 15rem;
+}
+
+.title::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
